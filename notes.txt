@@ -1,0 +1,4 @@
+installing react with vite:
+    * npm create vite@latest
+
+create the repository on GitHub and push the first installation, without the node_modules folder 
