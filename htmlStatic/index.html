@@ -4,16 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice Static html</title>
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-     <style>
-        body {
-            background-color: #242424;
-        }
-     </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        background-color: #242424;
+      }
+    </style>
   </head>
   <body>
     <div class="container mx-auto p-4">
       <h1 class="text-4xl text-amber-400 font-bold">Hello world!</h1>
+      <br />
+      <!-- start flex boxes -->
+      <div class="flex flex-wrap gap-2">
+        <div class="w-full lg:w-[60%] flex-none bg-amber-700  p-1">
+          <input
+            id="description"
+            type="text"
+            name="description"
+            placeholder="Insert description"
+            class="block w-full rounded-sm grow bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+          /></div>
+        <!-- 02 and 03: half width each on mobile -->
+        <div class="w-1/2 lg:w-[12%] sm:w-32 flex-1 bg-blue-500 p-1">
+          <input
+            id="quantity"
+            type="number"
+            name="quantity"
+            class="block w-full rounded-sm grow bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+          />
+        </div>
+        <div class="w-1/2 lg:w-[12%] sm:w-32 flex-1 bg-amber-700 p-1">
+          <input
+            id="rate"
+            type="text"
+            name="rate"
+            placeholder="£"
+            class="block w-full rounded-sm grow bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+          />
+        </div>
+        <div class="w-1/2 lg:w-[12%] sm:w-32 flex-1 bg-blue-500 p-1">
+        <p>Amount</p>
+        </div>
+        <div class="w-[4%]  sm:w-32 flex-1 bg-amber-700 p-1">X</div>
+      </div>
+      <!-- end flex boxes -->
+
     </div>
   </body>
 </html>

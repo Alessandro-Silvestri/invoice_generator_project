@@ -3,5 +3,5 @@ installing react with vite:
 
 create the repository on GitHub and push the first installation, without the node_modules folder 
 
-installing tailwindcss:
+installing and configuring tailwindcss:
     * npm install tailwindcss @tailwindcss/vite
