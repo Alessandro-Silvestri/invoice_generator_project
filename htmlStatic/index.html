@@ -14,17 +14,25 @@
   <body>
     <div class="container mx-auto p-4">
       <h1 class="text-4xl text-amber-400 font-bold">Hello world!</h1>
+      <!-- start invoice sender -->
+      <textarea
+        class="block w-full p-4 text-base text-white bg-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 resize-y"
+        rows="4"
+        placeholder="Invoice sender"
+      ></textarea>
+      <!-- end invoice sender -->
       <br />
       <!-- start flex boxes -->
       <div class="flex flex-wrap gap-2">
-        <div class="w-full lg:w-[60%] flex-none bg-amber-700  p-1">
+        <div class="w-full lg:w-[60%] flex-none bg-amber-700 p-1">
           <input
             id="description"
             type="text"
             name="description"
             placeholder="Insert description"
             class="block w-full rounded-sm grow bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
-          /></div>
+          />
+        </div>
         <!-- 02 and 03: half width each on mobile -->
         <div class="w-1/2 lg:w-[12%] sm:w-32 flex-1 bg-blue-500 p-1">
           <input
@@ -44,11 +52,29 @@
           />
         </div>
         <div class="w-1/2 lg:w-[12%] sm:w-32 flex-1 bg-blue-500 p-1">
-        <p>Amount</p>
+          <p>Amount</p>
         </div>
-        <div class="w-[4%]  sm:w-32 flex-1 bg-amber-700 p-1">X</div>
+        <div class="w-[4%] sm:w-32 flex-1 bg-amber-700 p-1">X</div>
       </div>
       <!-- end flex boxes -->
+
+      <!-- start horizontal flex box -->
+      <br />
+      <div class="flex flex-col md:flex-row border border-red-500">
+        <div class="flex-1 bg-amber-100">who is this from</div>
+        <div class="flex-1 hidden md:block bg-amber-500">empty box and hidden in mobile mode</div>
+        <div class="flex-1 bg-amber-100">INVOICE (number)</div>
+      </div>
+      <!-- end horizontal flex box -->
+
+      <!-- start vertical flex box -->
+      <br>
+      <div class="flex flex-col">
+        <div class="flex-1 bg-blue-200">horizontal 1</div>
+        <div class="flex-1 bg-blue-500">horizontal 1</div>
+        <div class="flex-1 bg-blue-200">horizontal 1</div>
+      </div>
+      <!-- end vertical flex box -->
 
     </div>
   </body>
