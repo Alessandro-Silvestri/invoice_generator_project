@@ -3,47 +3,49 @@ import "./App.css";
 function App() {
   return (
     <div className="container mx-auto p-5">
-      <p className="text-3xl font-bold text-white mb-5">INVOICE MAKER</p>
+      <p className="text-3xl font-bold text-black mb-5">INVOICE MAKER</p>
+
       <div className="flex flex-col md:flex-row">
         <div className="flex-1">
           <textarea
-            className="block md:w-full w-80 p-4 text-base text-white bg-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 resize-y"
+            className="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 resize-y"
             rows="4"
             placeholder="Invoice sender"
           ></textarea>
         </div>
         <div className="flex-1 hidden md:block"></div>
         <div className="flex-1">
+
           <div className="flex flex-col">
             <div className="flex-1">
-              <p className="text-3xl font-bold text-white md:mt-0 mt-5">INVOICE</p>
+              <p className="text-2xl text-black md:mt-0 mt-5">INVOICE</p>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 mt-3">
               <input
                 id="invoiceNumber"
                 type="number"
                 name="invoiceNumber"
-                className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+                className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-1 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
               />
             </div>
           </div>
         </div>
       </div>
+
       <div className="flex flex-col md:flex-row mt-5">
-        <div className="flex-1 text-white">
+        <div className="flex-1 text-black">
           <div className="flex flex-col">
             <div className="flex-1">Bill to:</div>
             <div className="flex-1">
               <textarea
-                className="block md:w-full w-80 p-4 text-base text-white bg-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 resize-y"
+                className="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 resize-y"
                 rows="4"
-                placeholder="Invoice sender"
               ></textarea>
             </div>
           </div>
         </div>
-        <div className="flex-1 text-white"></div>
-        <div className="flex-1 text-white">
+        <div className="flex-1 text-black"></div>
+        <div className="flex-1">
           <div className="flex flex-col">
             <div className="md:mt-0 mt-5 flex-1">Date</div>
             <div className="flex-1 items-center">
@@ -51,14 +53,14 @@ function App() {
                 type="date"
                 id="invoice-date"
                 name="invoice-date"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-800 p-2.5 text-base text-white placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 appearance-none"
+                className="block w-full rounded-sm border border-gray-300 bg-white p-2.5 text-base text-black placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 appearance-none"
               />
             </div>
           </div>
         </div>
       </div>
       <div
-        className="hidden lg:flex flex-wrap gap-2 mt-7 bg-emerald-800 text-white rounded-sm"
+        className="hidden lg:flex flex-wrap gap-2 mt-7 bg-[#476EAE] text-white rounded-sm"
       >
         <div className="w-full lg:w-[60%] flex-none flex items-center">
           <p className="ml-2">Item</p>
@@ -74,9 +76,10 @@ function App() {
           <p>Amount</p>
         </div>
         <div
-          className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-white"
+          className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black"
         ></div>
       </div>
+
       <div className="lg:mt-3 mt-10 flex flex-wrap gap-2">
         <div className="w-full lg:w-[60%] flex-none flex items-center">
           <input
@@ -84,7 +87,7 @@ function App() {
             type="text"
             name="description"
             placeholder="Insert description"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
           />
         </div>
         <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
@@ -92,24 +95,67 @@ function App() {
             id="quantity"
             type="number"
             name="quantity"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white focus:outline-none sm:text-sm/6"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none sm:text-sm/6"
           />
         </div>
 
         <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p className="text-white mr-2 ml-3">£</p>
+          <p className="text-black mr-2 ml-3">£</p>
           <input
             id="rate"
             type="text"
             name="rate"
-            placeholder="£"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
           />
         </div>
         <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
-          <p className="text-white">Amount</p>
+          <p className="text-black">Amount</p>
         </div>
-        <div className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-white">
+        <div className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black">
+          <button
+            className="flex justify-center items-center px-5 bg-[#A7E399] text-black hover:text-white rounded-full hover:bg-[#476EAE] transition duration-150 ease-in-out cursor-pointer"
+          >
+            x
+          </button>
+        </div>
+      </div>
+
+
+
+
+
+      <div className="lg:mt-3 mt-10 flex flex-wrap gap-2">
+        <div className="w-full lg:w-[60%] flex-none flex items-center">
+          <input
+            id="description"
+            type="text"
+            name="description"
+            placeholder="Insert description"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+          />
+        </div>
+        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
+          <input
+            id="quantity"
+            type="number"
+            name="quantity"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none sm:text-sm/6"
+          />
+        </div>
+
+        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
+          <p className="text-black mr-2 ml-3">£</p>
+          <input
+            id="rate"
+            type="text"
+            name="rate"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+          />
+        </div>
+        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
+          <p className="text-black">Amount</p>
+        </div>
+        <div className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black">
           X
         </div>
       </div>
@@ -120,7 +166,7 @@ function App() {
             type="text"
             name="description"
             placeholder="Insert description"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
           />
         </div>
         <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
@@ -128,112 +174,40 @@ function App() {
             id="quantity"
             type="number"
             name="quantity"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white focus:outline-none sm:text-sm/6"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none sm:text-sm/6"
           />
         </div>
 
         <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p className="text-white mr-2 ml-3">£</p>
+          <p className="text-black mr-2 ml-3">£</p>
           <input
             id="rate"
             type="text"
             name="rate"
-            placeholder="£"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
           />
         </div>
         <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
-          <p className="text-white">Amount</p>
+          <p className="text-black">Amount</p>
         </div>
-        <div className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-white">
+        <div className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black">
           X
         </div>
       </div>
-      <div className="lg:mt-3 mt-10 flex flex-wrap gap-2">
-        <div className="w-full lg:w-[60%] flex-none flex items-center">
-          <input
-            id="description"
-            type="text"
-            name="description"
-            placeholder="Insert description"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
-          />
-        </div>
-        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <input
-            id="quantity"
-            type="number"
-            name="quantity"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white focus:outline-none sm:text-sm/6"
-          />
-        </div>
 
-        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p className="text-white mr-2 ml-3">£</p>
-          <input
-            id="rate"
-            type="text"
-            name="rate"
-            placeholder="£"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
-          />
-        </div>
-        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
-          <p className="text-white">Amount</p>
-        </div>
-        <div className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-white">
-          X
-        </div>
-      </div>
-      <div className="lg:mt-3 mt-10 flex flex-wrap gap-2">
-        <div className="w-full lg:w-[60%] flex-none flex items-center">
-          <input
-            id="description"
-            type="text"
-            name="description"
-            placeholder="Insert description"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
-          />
-        </div>
-        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <input
-            id="quantity"
-            type="number"
-            name="quantity"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white focus:outline-none sm:text-sm/6"
-          />
-        </div>
-
-        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p className="text-white mr-2 ml-3">£</p>
-          <input
-            id="rate"
-            type="text"
-            name="rate"
-            placeholder="£"
-            className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
-          />
-        </div>
-        <div className="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
-          <p className="text-white">Amount</p>
-        </div>
-        <div className="lg:w-[4%] sm:w-32 flex-1 flex items-center text-white">
-          X
-        </div>
-      </div>
       <button
-        className="px-6 py-2 mt-5 bg-indigo-600 text-white font-semibold rounded-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-150 ease-in-out cursor-pointer"
+        className="px-6 py-2 mt-5 bg-[#A7E399] text-black hover:text-white rounded-sm hover:bg-[#476EAE] transition duration-150 ease-in-out cursor-pointer"
       >
         + Line Item
       </button>
 
-      <div className="flex flex-col lg:flex-row mt-20 mb-20 text-white">
+      <div className="flex flex-col lg:flex-row mt-20 mb-20 text-black">
         <div className="flex-1">
           <div className="flex-col">
             <div className="flex-1">Notes</div>
             <div className="flex-1">
               <textarea
-                className="block md:w-full w-80 p-4 text-base text-white bg-gray-800 border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 resize-y"
+                className="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 resize-y"
                 rows="4"
               ></textarea>
             </div>
@@ -250,7 +224,7 @@ function App() {
                     id="tax"
                     type="number"
                     name="tax"
-                    className="block w-full rounded-sm grow border border-white bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+                    className="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
                   />
                 </div>
                 <div className="flex-1"><span className="ml-3">%</span></div>

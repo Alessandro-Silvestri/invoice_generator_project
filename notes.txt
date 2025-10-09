@@ -5,3 +5,7 @@ create the repository on GitHub and push the first installation, without the nod
 
 installing and configuring tailwindcss:
     * npm install tailwindcss @tailwindcss/vite
+
+dealing with the drop menu I have to use this tailwind script or install the library: @tailwindplus/elements
+    * <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
+    * <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>

@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice Static html</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
   </head>
   <body class="bg-white">
     <div class="container mx-auto p-5">
@@ -42,25 +45,20 @@
       </div>
       <!-- end Row Sender and Invoice number -->
 
-      <!-- start row bill to -->
       <div class="flex flex-col md:flex-row mt-5">
         <div class="flex-1 text-black">
-          <!-- start vertical flex -->
           <div class="flex flex-col">
             <div class="flex-1">Bill to:</div>
             <div class="flex-1">
               <textarea
                 class="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 resize-y"
                 rows="4"
-                placeholder="Invoice sender"
               ></textarea>
             </div>
           </div>
-          <!-- end   vertical flex -->
         </div>
         <div class="flex-1 text-black"></div>
         <div class="flex-1">
-          <!-- start vertical flex date -->
           <div class="flex flex-col">
             <div class="md:mt-0 mt-5 flex-1">Date</div>
             <div class="flex-1 items-center">
@@ -71,11 +69,110 @@
                 class="block w-full rounded-sm border border-gray-300 bg-white p-2.5 text-base text-black placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 appearance-none"
               />
             </div>
+            <div class="flex-1">
+              <!-- 
+            "USD" USD - United States Dollar
+            "EUR" EUR - Euro
+            "GBP" GBP - British Pound Sterling
+            "JPY" JPY - Japanese Yen
+            "CNY" CNY - Chinese Yuan
+            "AUD" AUD - Australian Dollar
+            "CAD" CAD - Canadian Dollar
+            "CHF" CHF - Swiss Franc
+            "INR" INR - Indian Rupee
+            "MXN" MXN - Mexican Peso
+              -->
+              <!-- start drop menu -->
+              <el-dropdown class="inline-block mt-5">
+                <button
+                  class="inline-flex w-full justify-center gap-x-1.5 rounded-sm bg-white px-3 py-2 text-sm text-black shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-[#A7E399] cursor-pointer"
+                >
+                  Currency
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="-mr-1 size-5 text-gray-400"
+                  >
+                    <path
+                      d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                <el-menu
+                  anchor="bottom end"
+                  popover
+                  class="w-56 origin-top-right rounded-md bg-white shadow-lg outline-1 outline-black/5 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                >
+                  <div class="py-1">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >$ USD - United States Dollar</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >€ EUR - Euro</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >£ GBP - British Pound</a
+                    >
+
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >¥ JPY - Japanese Yen</a
+                    >
+
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >¥ CNY - Chinese Yuan</a
+                    >
+
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >A$ AUD - Australian Dollar</a
+                    >
+
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >C$ CAD - Canadian Dollar</a
+                    >
+
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >Fr CHF - Swiss Franc</a
+                    >
+
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      >₹ INR - Indian Rupee</a
+                    >
+
+                    <script
+                      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+                      type="module"
+                    ></script>
+                  </div>
+                </el-menu>
+              </el-dropdown>
+              <!-- end drop menu -->
+            </div>
           </div>
-          <!-- start vertical flex date -->
         </div>
       </div>
-      <!-- start row bill to -->
 
       <!-- start table header -->
       <div
@@ -100,10 +197,6 @@
       </div>
       <!-- end table header -->
 
-
-
-
-
       <!-- start invoice row calculation -->
       <div class="lg:mt-3 mt-10 flex flex-wrap gap-2">
         <div class="w-full lg:w-[60%] flex-none flex items-center">
@@ -138,7 +231,7 @@
           <p class="text-black">Amount</p>
         </div>
         <div class="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black">
-          X
+          x
         </div>
       </div>
       <!-- end invoice row calculation -->
@@ -220,13 +313,9 @@
         </div>
       </div>
       <!-- end invoice row calculation -->
-
-
-
-
 
       <button
-        class="px-6 py-2 mt-5 bg-[#A7E399] text-black hover:text-white rounded-sm hover:bg-[#476EAE] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition duration-150 ease-in-out cursor-pointer"
+        class="px-6 py-2 mt-5 bg-[#A7E399] text-black hover:text-white rounded-sm hover:bg-[#476EAE] transition duration-150 ease-in-out cursor-pointer"
       >
         + Line Item
       </button>
@@ -271,7 +360,6 @@
         </div>
       </div>
       <!-- end notes row -->
-
     </div>
   </body>
 </html>
