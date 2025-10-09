@@ -11,7 +11,7 @@
       src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
       type="module"
     ></script>
-    <!----------------------------------------------->
+    <!-- script for the input: currency drop menu' -->
 
     <!-- start google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,25 +22,24 @@
     />
     <!-- start google fonts -->
     <style>
-      .roboto-title1 {
+      .roboto-title1,
+      .roboto-title2 {
         font-family: "Roboto", sans-serif;
         font-optical-sizing: auto;
-        font-weight: 250;
         font-style: normal;
         font-variation-settings: "wdth" 100;
+        font-weight: 250;
         font-size: 50px;
       }
 
       .roboto-title2 {
-        font-family: "Roboto", sans-serif;
-        font-optical-sizing: auto;
         font-weight: 150;
-        font-style: normal;
-        font-variation-settings: "wdth" 100;
         font-size: 35px;
       }
 
-      .roboto-text {
+      .roboto-text,
+      .roboto-text-input,
+      .roboto-header {
         font-family: "Roboto", sans-serif;
         font-optical-sizing: auto;
         font-weight: 200;
@@ -50,27 +49,36 @@
       }
 
       .roboto-text-input {
-        font-family: "Roboto", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 200;
-        font-style: normal;
-        font-variation-settings: "wdth" 100;
         font-size: 18px;
       }
 
       .roboto-header {
-        font-family: "Roboto", sans-serif;
-        font-optical-sizing: auto;
         font-weight: 400;
-        font-style: normal;
-        font-variation-settings: "wdth" 100;
         font-size: 17px;
       }
     </style>
   </head>
   <body class="bg-white">
     <div class="container mx-auto p-5">
-      <p class="text-black mb-5 roboto-title1">INVOICE MAKER</p>
+      <!-- start Row Invoice Maker ---------------------------------------------------------------------------------------------------------->
+      <div class="flex flex-col md:flex-row">
+        <div class="flex w-full md:w-3/5">
+          <p class="text-black mb-5 roboto-title1">INVOICE MAKER</p>
+        </div>
+        <div class="flex w-2/5 justify-end">
+          <label class="inline-flex items-center cursor-pointer mb-5 md:mb-0">
+            <input type="checkbox" value="" class="sr-only peer" />
+            <div
+              class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-[#A7E399] dark:bg-gray-200 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#476EAE] dark:peer-checked:bg-blue-600mx-5"
+            ></div>
+
+        <!--  class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600mx-5"
+              -->
+            <span class="ms-3 roboto-text">Dark mode</span>
+          </label>
+        </div>
+      </div>
+      <!-- end Row Invoice Maker ---------------------------------------------------------------------------------------------------------->
 
       <!-- start Row Sender and Invoice number -->
       <div class="flex flex-col md:flex-row">
@@ -96,7 +104,7 @@
                 id="invoiceNumber"
                 type="number"
                 name="invoiceNumber"
-                class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-1 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+                class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-1 text-base text-black placeholder:text-gray-500 focus:outline-none roboto-text-input"
               />
             </div>
           </div>
@@ -104,7 +112,7 @@
         </div>
       </div>
       <!-- end Row Sender and Invoice number -->
-      
+
       <!-- start Row Bill to -->
       <div class="flex flex-col md:flex-row mt-5">
         <div class="flex-1 text-black">
