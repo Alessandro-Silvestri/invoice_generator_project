@@ -9,3 +9,23 @@ installing and configuring tailwindcss:
 dealing with the drop menu I have to use this tailwind script or install the library: @tailwindplus/elements
     * <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
     * <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
+
+font: "Roboto" from google fonts. Copy in the css file
+    * @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+font: "Roboto" usage
+    // <weight>: Use a value from 100 to 900
+    // <uniquifier>: Use a unique and descriptive class name
+
+    .roboto-<uniquifier> {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    }
+
+font: "Roboto" link to google font for checking the parameters I can modify
+    https://fonts.google.com/specimen/Roboto/tester

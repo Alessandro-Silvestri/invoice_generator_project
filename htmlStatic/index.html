@@ -5,20 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice Static html</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- script for the input: currency drop menu' -->
     <script
       src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
       type="module"
     ></script>
+    <!----------------------------------------------->
+
+    <!-- start google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- start google fonts -->
+    <style>
+      .roboto-title1 {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 250;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        font-size: 50px;
+      }
+
+      .roboto-title2 {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 150;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        font-size: 35px;
+      }
+
+      .roboto-text {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        font-size: 20px;
+      }
+
+      .roboto-text-input {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        font-size: 18px;
+      }
+
+      .roboto-header {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+        font-size: 17px;
+      }
+    </style>
   </head>
   <body class="bg-white">
     <div class="container mx-auto p-5">
-      <p class="text-3xl font-bold text-black mb-5">INVOICE MAKER</p>
+      <p class="text-black mb-5 roboto-title1">INVOICE MAKER</p>
 
       <!-- start Row Sender and Invoice number -->
       <div class="flex flex-col md:flex-row">
         <div class="flex-1">
           <textarea
-            class="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 resize-y"
+            class="block md:w-full w-80 p-4 text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 placeholder:text-base resize-y roboto-text-input"
             rows="4"
             placeholder="Invoice sender"
           ></textarea>
@@ -29,7 +87,9 @@
 
           <div class="flex flex-col">
             <div class="flex-1">
-              <p class="text-2xl text-black md:mt-0 mt-5">INVOICE</p>
+              <p class="text-2xl text-black md:mt-0 mt-5 roboto-title2">
+                INVOICE
+              </p>
             </div>
             <div class="flex-1 mt-3">
               <input
@@ -44,14 +104,15 @@
         </div>
       </div>
       <!-- end Row Sender and Invoice number -->
-
+      
+      <!-- start Row Bill to -->
       <div class="flex flex-col md:flex-row mt-5">
         <div class="flex-1 text-black">
           <div class="flex flex-col">
-            <div class="flex-1">Bill to:</div>
+            <div class="flex-1 roboto-text">Bill to:</div>
             <div class="flex-1">
               <textarea
-                class="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500 resize-y"
+                class="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 placeholder-gray-700 resize-y roboto-text-input"
                 rows="4"
               ></textarea>
             </div>
@@ -60,32 +121,20 @@
         <div class="flex-1 text-black"></div>
         <div class="flex-1">
           <div class="flex flex-col">
-            <div class="md:mt-0 mt-5 flex-1">Date</div>
+            <div class="md:mt-0 mt-5 flex-1 roboto-text">Date</div>
             <div class="flex-1 items-center">
               <input
                 type="date"
                 id="invoice-date"
                 name="invoice-date"
-                class="block w-full rounded-sm border border-gray-300 bg-white p-2.5 text-base text-black placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 appearance-none"
+                class="block w-full rounded-sm border border-gray-300 bg-white p-2.5 text-base text-black placeholder-gray-700 focus:ring-blue-500 focus:border-blue-500 appearance-none roboto-text-input"
               />
             </div>
             <div class="flex-1">
-              <!-- 
-            "USD" USD - United States Dollar
-            "EUR" EUR - Euro
-            "GBP" GBP - British Pound Sterling
-            "JPY" JPY - Japanese Yen
-            "CNY" CNY - Chinese Yuan
-            "AUD" AUD - Australian Dollar
-            "CAD" CAD - Canadian Dollar
-            "CHF" CHF - Swiss Franc
-            "INR" INR - Indian Rupee
-            "MXN" MXN - Mexican Peso
-              -->
               <!-- start drop menu -->
               <el-dropdown class="inline-block mt-5">
                 <button
-                  class="inline-flex w-full justify-center gap-x-1.5 rounded-sm bg-white px-3 py-2 text-sm text-black shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-[#A7E399] cursor-pointer"
+                  class="inline-flex w-full justify-center gap-x-1.5 rounded-sm bg-white px-3 py-2 text-sm text-black shadow-xs inset-ring-1 inset-ring-gray-300 hover:bg-[#A7E399] cursor-pointer roboto-text-input"
                 >
                   Currency
                   <svg
@@ -111,53 +160,53 @@
                   <div class="py-1">
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >$ USD - United States Dollar</a
                     >
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >€ EUR - Euro</a
                     >
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >£ GBP - British Pound</a
                     >
 
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >¥ JPY - Japanese Yen</a
                     >
 
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >¥ CNY - Chinese Yuan</a
                     >
 
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >A$ AUD - Australian Dollar</a
                     >
 
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >C$ CAD - Canadian Dollar</a
                     >
 
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >Fr CHF - Swiss Franc</a
                     >
 
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:bg-[#A7E399] focus:text-gray-900 focus:outline-hidden roboto-header"
                       >₹ INR - Indian Rupee</a
                     >
 
@@ -173,23 +222,24 @@
           </div>
         </div>
       </div>
+      <!-- end Row Bill to -->
 
       <!-- start table header -->
       <div
         class="hidden lg:flex flex-wrap gap-2 mt-7 bg-[#476EAE] text-white rounded-sm"
       >
         <div class="w-full lg:w-[60%] flex-none flex items-center">
-          <p class="ml-2">Item</p>
+          <p class="ml-4.5 roboto-header">Item</p>
         </div>
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p>Quantity</p>
+          <p class="roboto-header">Quantity</p>
         </div>
 
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p class="ml-7">Rate</p>
+          <p class="ml-7 roboto-header">Rate</p>
         </div>
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
-          <p>Amount</p>
+          <p class="roboto-header">Amount</p>
         </div>
         <div
           class="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black"
@@ -205,7 +255,7 @@
             type="text"
             name="description"
             placeholder="Insert description"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 placeholder:text-base focus:outline-none roboto-text-input"
           />
         </div>
         <!-- 02 and 03: half width each on mobile -->
@@ -214,21 +264,21 @@
             id="quantity"
             type="number"
             name="quantity"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none roboto-text-input"
           />
         </div>
 
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p class="text-black mr-2 ml-3">£</p>
+          <p class="text-black mr-2 ml-3 roboto-text">£</p>
           <input
             id="rate"
             type="text"
             name="rate"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none roboto-text-input"
           />
         </div>
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
-          <p class="text-black">Amount</p>
+          <p class="text-black roboto-text">Amount</p>
         </div>
         <div class="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black">
           x
@@ -244,7 +294,7 @@
             type="text"
             name="description"
             placeholder="Insert description"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 placeholder:text-base focus:outline-none roboto-text-input"
           />
         </div>
         <!-- 02 and 03: half width each on mobile -->
@@ -253,24 +303,24 @@
             id="quantity"
             type="number"
             name="quantity"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none roboto-text-input"
           />
         </div>
 
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p class="text-black mr-2 ml-3">£</p>
+          <p class="text-black mr-2 ml-3 roboto-text">£</p>
           <input
             id="rate"
             type="text"
             name="rate"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none roboto-text-input"
           />
         </div>
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
-          <p class="text-black">Amount</p>
+          <p class="text-black roboto-text">Amount</p>
         </div>
         <div class="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black">
-          X
+          x
         </div>
       </div>
       <!-- end invoice row calculation -->
@@ -283,7 +333,7 @@
             type="text"
             name="description"
             placeholder="Insert description"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 placeholder:text-base focus:outline-none roboto-text-input"
           />
         </div>
         <!-- 02 and 03: half width each on mobile -->
@@ -292,30 +342,30 @@
             id="quantity"
             type="number"
             name="quantity"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-4 pl-4 text-base text-black focus:outline-none roboto-text-input"
           />
         </div>
 
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center">
-          <p class="text-black mr-2 ml-3">£</p>
+          <p class="text-black mr-2 ml-3 roboto-text">£</p>
           <input
             id="rate"
             type="text"
             name="rate"
-            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+            class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none roboto-text-input"
           />
         </div>
         <div class="lg:w-[12%] sm:w-32 flex-1 flex items-center p-1">
-          <p class="text-black">Amount</p>
+          <p class="text-black roboto-text">Amount</p>
         </div>
         <div class="lg:w-[4%] sm:w-32 flex-1 flex items-center text-black">
-          X
+          x
         </div>
       </div>
       <!-- end invoice row calculation -->
 
       <button
-        class="px-6 py-2 mt-5 bg-[#A7E399] text-black hover:text-white rounded-sm hover:bg-[#476EAE] transition duration-150 ease-in-out cursor-pointer"
+        class="px-6 py-2 mt-5 bg-[#A7E399] text-black hover:text-white rounded-sm hover:bg-[#476EAE] transition duration-150 ease-in-out cursor-pointer roboto-header"
       >
         + Line Item
       </button>
@@ -324,10 +374,10 @@
       <div class="flex flex-col lg:flex-row mt-20 mb-20 text-black">
         <div class="flex-1">
           <div class="flex-col">
-            <div class="flex-1">Notes</div>
+            <div class="flex-1 roboto-text">Notes</div>
             <div class="flex-1">
               <textarea
-                class="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 resize-y"
+                class="block md:w-full w-80 p-4 text-base text-black bg-white border border-gray-300 rounded-sm focus:ring-blue-500 focus:border-blue-500 resize-y roboto-text-input"
                 rows="4"
               ></textarea>
             </div>
@@ -338,22 +388,24 @@
           <div class="flex-col">
             <div class="flex-1">
               <div class="flex justify-center items-center mt-5">
-                <div class="flex-1">Tax:</div>
+                <div class="flex-1 roboto-text">Tax:</div>
                 <div class="flex-1">
                   <input
                     id="tax"
                     type="number"
                     name="tax"
-                    class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
+                    class="block w-full rounded-sm grow border border-gray-300 bg-white py-1.5 pr-3 pl-4 text-base text-black placeholder:text-gray-500 focus:outline-none roboto-text-input"
                   />
                 </div>
-                <div class="flex-1"><span class="ml-3">%</span></div>
+                <div class="flex-1">
+                  <span class="ml-3 roboto-text">%</span>
+                </div>
               </div>
             </div>
             <div class="flex-1">
               <div class="flex mt-5">
-                <div class="flex-1">Balance Due:</div>
-                <div class="flex-1">£ 00,00.00</div>
+                <div class="flex-1 roboto-text">Balance Due:</div>
+                <div class="flex-1 roboto-text">£ 00,00.00</div>
               </div>
             </div>
           </div>
